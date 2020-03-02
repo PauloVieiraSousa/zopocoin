@@ -1,8 +1,11 @@
-const ConvertLib = artifacts.require("ConvertLib");
-const MetaCoin = artifacts.require("MetaCoin");
+const ZopoCoin = artifacts.require('ZopoCoin');
 
 module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+
+  const name = 'ZopoCoin';
+  const symbol = "ZOPO";
+  const decimals = 18;
+
+  deployer.deploy(ZopoCoin, name, symbol, decimals);
+
 };
